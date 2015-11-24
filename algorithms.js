@@ -21,7 +21,18 @@
 // countVowels('abcedfg') ->2
 
 var countVowels = function(str){
-
+	var vowelCount = 0;
+	var vowelObj = {a:1,e:1,o:1,i:1,u:1,A:1,E:1,O:1,I:1,U:1}
+	var strCounter = function(str){
+		if(str.length === 0){
+			return
+		} else if(vowelObj[str[0]] === 1){
+			vowelCount++;
+		}
+		strCounter(str.slice(1));
+	};
+	strCounter(str);
+	return vowelCount;
 };
 
 ///////////////////////////////////////////////////////////////////////
