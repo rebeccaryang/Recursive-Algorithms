@@ -63,6 +63,19 @@ var recursiveSum = function(n){
 // PowerOfTwo(9) -> false
 
 var isPowerOfTwo = function(n){
+	var check = false;
+	var recursiveTest = function(number){
+		if(number === 2){
+			check = true;
+			return;
+		} else if (number % 2 === 0){
+			recursiveTest(number/2);
+		} else if (number % 2 !== 0){
+			return;
+		}
+	}
+	recursiveTest(n);
+	return check;
 
 };
 
